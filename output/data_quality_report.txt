@@ -1,0 +1,278 @@
+-----------------------------------------------------------------------
+DQC started for categories table at 2023-08-24 18:17:40.882158
+
+
+categories duplicated values:
+
+Empty DataFrame
+Columns: [category_id, category_name]
+Index: []
+
+categories description:
+
+       category_id
+count         7.00
+mean          4.00
+std           2.16
+min           1.00
+25%           2.50
+50%           4.00
+75%           5.50
+max           7.00
+
+categories data quality:
+
+               count  unique_count  missing_values   dtype
+category_id        7             7               0   int64
+category_name      7             7               0  object
+----------------------------------------------------------------------------------------------------------------------------------------------
+DQC started for brands table at 2023-08-24 18:17:41.358833
+
+
+brands duplicated values:
+
+Empty DataFrame
+Columns: [brand_id, brand_name]
+Index: []
+
+brands description:
+
+       brand_id
+count      9.00
+mean       5.00
+std        2.74
+min        1.00
+25%        3.00
+50%        5.00
+75%        7.00
+max        9.00
+
+brands data quality:
+
+            count  unique_count  missing_values   dtype
+brand_id        9             9               0   int64
+brand_name      9             9               0  object
+----------------------------------------------------------------------------------------------------------------------------------------------
+DQC started for products table at 2023-08-24 18:17:41.826685
+
+
+products duplicated values:
+
+Empty DataFrame
+Columns: [product_id, product_name, brand_id, category_id, model_year, list_price]
+Index: []
+
+products description:
+
+       product_id  brand_id  category_id  model_year  list_price
+count      321.00    321.00       321.00      321.00      321.00
+mean       161.00      5.48         4.03     2017.59     1520.59
+std         92.81      3.71         2.19        0.67     1612.15
+min          1.00      1.00         1.00     2016.00       89.99
+25%         81.00      1.00         2.00     2017.00      439.99
+50%        161.00      7.00         3.00     2018.00      761.99
+75%        241.00      9.00         6.00     2018.00     2299.99
+max        321.00      9.00         7.00     2019.00    11999.99
+
+products data quality:
+
+              count  unique_count  missing_values    dtype
+product_id      321           321               0    int64
+product_name    321           291               0   object
+brand_id        321             9               0    int64
+category_id     321             7               0    int64
+model_year      321             4               0    int64
+list_price      321           106               0  float64
+----------------------------------------------------------------------------------------------------------------------------------------------
+DQC started for customers table at 2023-08-24 18:17:42.314373
+
+
+customers duplicated values:
+
+Empty DataFrame
+Columns: [customer_id, first_name, last_name, phone, email, street, city, state, zip_code]
+Index: []
+
+customers description:
+
+       customer_id
+count      1445.00
+mean        723.00
+std         417.28
+min           1.00
+25%         362.00
+50%         723.00
+75%        1084.00
+max        1445.00
+
+customers data quality:
+
+             count  unique_count  missing_values   dtype
+customer_id   1445          1445               0   int64
+first_name    1445          1265               0  object
+last_name     1445           753               0  object
+phone          178           178            1267  object
+email         1445          1445               0  object
+street        1445          1445               0  object
+city          1445           195               0  object
+state         1445             3               0  object
+zip_code      1445           195               0  object
+----------------------------------------------------------------------------------------------------------------------------------------------
+DQC started for stores table at 2023-08-24 18:17:43.029358
+
+
+stores duplicated values:
+
+Empty DataFrame
+Columns: [store_id, store_name, phone, email, street, city, state, zip_code]
+Index: []
+
+stores description:
+
+       store_id
+count       3.0
+mean        2.0
+std         1.0
+min         1.0
+25%         1.5
+50%         2.0
+75%         2.5
+max         3.0
+
+stores data quality:
+
+            count  unique_count  missing_values   dtype
+store_id        3             3               0   int64
+store_name      3             3               0  object
+phone           3             3               0  object
+email           3             3               0  object
+street          3             3               0  object
+city            3             3               0  object
+state           3             3               0  object
+zip_code        3             3               0  object
+----------------------------------------------------------------------------------------------------------------------------------------------
+DQC started for staffs table at 2023-08-24 18:17:43.501387
+
+
+staffs duplicated values:
+
+Empty DataFrame
+Columns: [staff_id, first_name, last_name, email, phone, active, store_id, manager_id]
+Index: []
+
+staffs description:
+
+       staff_id  active  store_id  manager_id
+count     10.00    10.0     10.00        9.00
+mean       5.50     1.0      1.90        3.44
+std        3.03     0.0      0.88        2.55
+min        1.00     1.0      1.00        1.00
+25%        3.25     1.0      1.00        1.00
+50%        5.50     1.0      2.00        2.00
+75%        7.75     1.0      2.75        5.00
+max       10.00     1.0      3.00        7.00
+
+staffs data quality:
+
+            count  unique_count  missing_values    dtype
+staff_id       10            10               0    int64
+first_name     10            10               0   object
+last_name      10            10               0   object
+email          10            10               0   object
+phone          10            10               0   object
+active         10             1               0    int64
+store_id       10             3               0    int64
+manager_id      9             4               1  float64
+----------------------------------------------------------------------------------------------------------------------------------------------
+DQC started for orders table at 2023-08-24 18:17:43.974321
+
+
+orders duplicated values:
+
+Empty DataFrame
+Columns: [order_id, customer_id, order_status, order_date, required_date, shipped_date, store_id, staff_id]
+Index: []
+
+orders description:
+
+       order_id  customer_id  order_status  store_id  staff_id
+count   1615.00      1615.00       1615.00   1615.00   1615.00
+mean     808.00       654.17          3.78      1.89      5.86
+std      466.35       443.23          0.69      0.56      1.91
+min        1.00         1.00          1.00      1.00      2.00
+25%      404.50       237.00          4.00      2.00      6.00
+50%      808.00       638.00          4.00      2.00      6.00
+75%     1211.50      1041.50          4.00      2.00      7.00
+max     1615.00      1445.00          4.00      3.00      9.00
+
+orders data quality:
+
+               count  unique_count  missing_values   dtype
+order_id        1615          1615               0   int64
+customer_id     1615          1445               0   int64
+order_status    1615             4               0   int64
+order_date      1615           725               0  object
+required_date   1615           734               0  object
+shipped_date    1445           675             170  object
+store_id        1615             3               0   int64
+staff_id        1615             6               0   int64
+----------------------------------------------------------------------------------------------------------------------------------------------
+DQC started for order_items table at 2023-08-24 18:17:44.493191
+
+
+order_items duplicated values:
+
+Empty DataFrame
+Columns: [order_id, item_id, product_id, quantity, list_price, discount]
+Index: []
+
+order_items description:
+
+       order_id  item_id  product_id  quantity  list_price  discount
+count   4723.00  4723.00     4723.00    4723.0     4723.00   4723.00
+mean     821.09     2.26       59.36       1.5     1212.45      0.11
+std      465.26     1.20       67.31       0.5     1352.77      0.06
+min        1.00     1.00        2.00       1.0      -20.11      0.05
+25%      423.00     1.00       14.00       1.0      429.00      0.05
+50%      828.00     2.00       28.00       1.0      599.99      0.10
+75%     1226.00     3.00       84.00       2.0     1549.00      0.20
+max     1615.00     6.00      315.00       2.0    11999.99      0.20
+
+order_items data quality:
+
+            count  unique_count  missing_values    dtype
+order_id     4723          1615               0    int64
+item_id      4723             6               0    int64
+product_id   4723           307               0    int64
+quantity     4723             2               0    int64
+list_price   4723           105               0  float64
+discount     4723             4               0  float64
+----------------------------------------------------------------------------------------------------------------------------------------------
+DQC started for stocks table at 2023-08-24 18:17:45.316328
+
+
+stocks duplicated values:
+
+Empty DataFrame
+Columns: [store_id, product_id, quantity]
+Index: []
+
+stocks description:
+
+       store_id  product_id  quantity
+count    939.00       939.0    939.00
+mean       2.00       157.0     14.39
+std        0.82        90.4      8.83
+min        1.00         1.0      0.00
+25%        1.00        79.0      7.00
+50%        2.00       157.0     14.00
+75%        3.00       235.0     22.00
+max        3.00       313.0     30.00
+
+stocks data quality:
+
+            count  unique_count  missing_values  dtype
+store_id      939             3               0  int64
+product_id    939           313               0  int64
+quantity      939            31               0  int64
+-----------------------------------------------------------------------
